@@ -1,0 +1,10 @@
+# Reflections
+
+> _Success is not final; failure is not fatal; It is the courage to continue that counts  -- *Winston S. Churchill*_
+
+This project aims to help users reflect and document their daily successes, failures, and plan on what to do better the next day.
+
+### Credits
+----
+This was initially written by a very wonderful individual [Olawale Aladeusi
+](https://www.codementor.io/olawalealadeusi896). You can follow the guide [here](https://www.codementor.io/olawalealadeusi896/building-simple-api-with-es6-krn8xx3k6)
