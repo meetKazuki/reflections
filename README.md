@@ -1,5 +1,7 @@
 # Reflections
 
+[![Build Status](https://travis-ci.org/meetKazuki/reflections.svg?branch=develop)](https://travis-ci.org/meetKazuki/reflections)
+
 > _Success is not final; failure is not fatal; It is the courage to continue that counts  -- *Winston S. Churchill*_
 
 This project aims to help users reflect and document their daily successes, failures, and plan on what to do better the next day.
