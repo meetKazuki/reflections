@@ -6,11 +6,11 @@
   "scripts": {
     "build": "npm run clean && npm run build-babel",
     "build-babel": "babel src -d build",
-    "clean": "rm -rf build && mkdir build",
+    "clean": "rm -rf build .nyc_output coverage && mkdir build",
+    "coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
     "dev-start": "babel-watch ./src/server.js",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run build",
     "start": "npm run build && node ./build/server.js",
-    "test": "nyc mocha --require @babel/polyfill --require @babel/register ./test/ --timeout 10000 --exit"
+    "test": "nyc mocha --require @babel/register --require @babel/polyfill --timeout 10000 --exit"
   },
   "repository": {
     "type": "git",
@@ -49,6 +49,7 @@
     "eslint": "^5.15.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.16.0",
+    "istanbul": "^0.4.5",
     "mocha": "^6.0.2",
     "mocha-lcov-reporter": "^1.3.0",
     "nyc": "^13.3.0"

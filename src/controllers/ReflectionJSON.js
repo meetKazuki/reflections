@@ -11,13 +11,19 @@ const Reflection = {
 
   getAll(req, res) {
     const reflections = ReflectionModel.findAll();
-    return res.status(200).send(reflections);
+    return res.status(200).json({
+      status: 200,
+      reflections,
+    });
   },
 
   getOne(req, res) {
     const reflection = ReflectionModel.findOne(req.params.id);
     if (!reflection) {
-      return res.status(404).send({ message: 'Reflection not found' });
+      return res.status(404).json({
+        status: 404,
+        error: 'reflection not found',
+      });
     }
     return res.send(reflection);
   },
