@@ -5,7 +5,7 @@ import app from '../src/server';
 chai.use(chaiHttp);
 const { expect } = chai;
 
-describe.skip('GET / requests', () => {
+describe('GET / requests', () => {
   it('should return the list of all the reflections created', (done) => {
     chai
       .request(app)
