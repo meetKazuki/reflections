@@ -7,7 +7,10 @@ import Reflection from '../controllers/ReflectionJSON';
 const router = express.Router();
 
 // Handle requestss on the /api/v1 endpoint
-router.get('/', (req, res) => res.status(200).send({ message: 'Welcome to Reflections API v1' }));
+router.get('/', (req, res) => res.status(200).json({
+  status: 200,
+  message: 'Welcome to Reflections API v1',
+}));
 
 router.post('/reflections', Reflection.create);
 router.get('/reflections', Reflection.getAll);

@@ -1,4 +1,4 @@
-import ReflectionModel from '../models/ReflectionModel';
+import ReflectionModel from '../models/ReflectionModelJSON';
 
 const Reflection = {
   create(req, res) {
@@ -6,7 +6,10 @@ const Reflection = {
       return res.status(400).send({ message: 'All fields are required' });
     }
     const reflection = ReflectionModel.create(req.body);
-    return res.status(201).send(reflection);
+    return res.status(201).json({
+      status: 201,
+      reflection,
+    });
   },
 
   getAll(req, res) {

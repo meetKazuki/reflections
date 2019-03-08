@@ -14,6 +14,9 @@ describe.skip('Handle incoming requests on routes', () => {
       .end((err, res) => {
         expect(res).to.have.status(200);
         expect(res.body).to.be.an('object');
+        expect(res.body).to.have.property('status');
+        expect(res.body.status).to.equal(200);
+        expect(res.body).to.have.property('message');
         expect(res.body.message).to.equal('Welcome to Reflections!');
         done(err);
       });
@@ -26,6 +29,9 @@ describe.skip('Handle incoming requests on routes', () => {
       .end((err, res) => {
         expect(res).to.have.status(200);
         expect(res.body).to.be.an('object');
+        expect(res.body).to.have.property('status');
+        expect(res.body.status).to.equal(200);
+        expect(res.body).to.have.property('message');
         expect(res.body.message).to.be.equal('Welcome to Reflections API v1');
         done(err);
       });
@@ -37,6 +43,10 @@ describe.skip('Handle incoming requests on routes', () => {
       .post('/api/v1')
       .end((err, res) => {
         expect(res).to.have.status(404);
+        expect(res.body).to.be.an('object');
+        expect(res.body).to.have.property('status');
+        expect(res.body.status).to.equal(404);
+        expect(res.body).to.have.property('message');
         expect(res.body.message).to.equal('Wrong endpoint. Endpoint does not exist');
         done(err);
       });

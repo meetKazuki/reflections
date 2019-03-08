@@ -9,11 +9,18 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use('/api/v1', router);
 
-app.get('/', (req, res) => res.status(200).send({ message: 'Welcome to Reflections!' }));
-app.all('*', (req, res) => res.status(404).send({ message: 'Wrong endpoint. Endpoint does not exist' }));
+/**
+ * App routes
+ */
+app.get('/', (req, res) => res.status(200).json({
+  status: 200,
+  message: 'Welcome to Reflections!',
+}));
+app.all('*', (req, res) => res.status(404).json({
+  status: 404,
+  message: 'Wrong endpoint. Endpoint does not exist',
+}));
 
-app.listen(PORT, () => {
-  console.log(`Server running at ${PORT}`);
-});
+app.listen(PORT, () => console.log(`Server running at ${PORT}`));
 
 export default app;

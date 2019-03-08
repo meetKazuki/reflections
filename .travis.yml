@@ -3,5 +3,9 @@ node_js: 10.15.1
 cache:
   directories:
     - "node_modules"
+env:
+  global:
+    - CODE_CLIMATE_REPO_TOKEN:
+      - secure: h5oF41J4Gj9BV3JTKjYgruDUFynbDXqrF8uHJuWnZVZefL1qiea3AfoBVc/VwnUtBbOpyDF2zRe1pEv5I7nd4IMUCP6lwPyttcihbDdDufJseMZeQkCfdUHbvardVkQ3Bs2BWYfTiWnX2Q41BArhC59gEyWcAj17U39mDN1Afo+/7/+eOt7HHpNiP/mtYw3BuRHQ3HIlhaEdoTDOAQxjLxMMyK0SMrf6mkQiD3WiBmjhAHj6/7hCWKspunBtGr8qYFetCmRxGyowSM2LEX+H1/wtljNluJWRmhLNh4KJz6/FMjZiKZhcZ5cR279nZ8wyv8RRrft/uIxCt1jA0V51oIzgsKl243wRcOkFDWPbLPzdPLYZZSE5ChvUzwDUJtGxJxqhW4zwd+g4Vea2f/0zvBliyQFGURWew0EqiTz1VgKXshYm3Dwa3bmTkDv52hue3yN3UdvNjpwi5fzD5ZpZEAnvZ7MYzI2bxbMoHp908x9cdlbe07FtiA+ENCUixiyawUENHvFEEmgfzyHodr6QSXDFGWbTVk/y4YJGAxo9298lLhQX3srT+e+RRu7QOAtFm4PY6ynILpwaiDWP773yFUYxRo5BHnaV3bNvvvhGwUGzWn72V76XTpXIBSRHrcAHLiFbp6kS7+yILq2k8IOY6jorHqt2vdIrl/HabStp6Bw=
 after_success:
   - npm run coverage
