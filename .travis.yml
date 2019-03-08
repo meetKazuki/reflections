@@ -5,6 +5,6 @@ cache:
     - "node_modules"
 env:
   global:
-    - CODE_CLIMATE_REPO_TOKEN=a11032e58474dad77c9c6ed75f296fa6d18434484b68ae79c3f3bf8ff25decac
+    - CC_TEST_REPORTER_ID=a11032e58474dad77c9c6ed75f296fa6d18434484b68ae79c3f3bf8ff25decac
 after_success:
   - npm run coverage
