@@ -3,7 +3,10 @@ import ReflectionModel from '../models/ReflectionModelJSON';
 const Reflection = {
   create(req, res) {
     if (!req.body.success && !req.body.lowPoint && !req.body.takeAway) {
-      return res.status(400).send({ message: 'All fields are required' });
+      return res.status(400).json({
+        status: 400,
+        error: 'All fields are required',
+      });
     }
     const reflection = ReflectionModel.create(req.body);
     return res.status(201).json({
@@ -34,7 +37,10 @@ const Reflection = {
   update(req, res) {
     const reflection = ReflectionModel.findOne(req.params.id);
     if (!reflection) {
-      return res.status(404).send({ message: 'Reflection not found' });
+      return res.status(404).json({
+        status: 404,
+        error: 'reflection not found',
+      });
     }
     const updatedReflection = ReflectionModel.update(req.params.id, req.body);
     return res.status(200).send(updatedReflection);
@@ -43,7 +49,10 @@ const Reflection = {
   delete(req, res) {
     const reflection = ReflectionModel.findOne(req.params.id);
     if (!reflection) {
-      return res.status(404).send({ message: 'Reflection not found' });
+      return res.status(404).json({
+        status: 404,
+        error: 'reflection not found',
+      });
     }
     const delRef = ReflectionModel.delete(req.params.id);
     return res.status(204).send(delRef);

@@ -6,7 +6,7 @@ chai.use(chaiHttp);
 
 const { expect } = chai;
 
-describe.skip('Handle incoming requests on routes', () => {
+describe('Handle incoming requests on routes', () => {
   it('should return 200 and success message for the / route', (done) => {
     chai
       .request(app)

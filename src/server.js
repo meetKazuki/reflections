@@ -1,4 +1,5 @@
 import express from 'express';
+import '@babel/polyfill';
 import router from './routes/routes';
 
 const app = express();

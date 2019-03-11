@@ -80,6 +80,7 @@ typings/
 .dynamodb/
 
 # Others
+USER_LOGON.md
 .DS_Store
 .vscode
 dist
