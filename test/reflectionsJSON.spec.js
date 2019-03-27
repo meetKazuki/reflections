@@ -41,7 +41,7 @@ describe('GET / requests', () => {
         expect(res.body).to.be.an('object');
         expect(res.body).to.have.property('status');
         expect(res.body.status).to.equal(404);
-        expect(res.body.error).to.equal('reflection not found');
+        expect(res.body).to.have.property('error');
         done(err);
       });
   });
@@ -81,7 +81,6 @@ describe('POST / requests', () => {
         expect(res.body).to.have.property('status');
         expect(res.body.status).to.equal(400);
         expect(res.body).to.have.property('error');
-        expect(res.body.error).to.equal('All fields are required');
         done(err);
       });
   });
@@ -140,7 +139,6 @@ describe('DELETE / requests', () => {
         expect(res.body).to.have.property('status');
         expect(res.body.status).to.equal(404);
         expect(res.body).to.have.property('error');
-        expect(res.body.error).to.equal('reflection not found');
         done(err);
       });
   });

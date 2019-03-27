@@ -1,4 +1,5 @@
 import express from 'express';
+import ReflectionController from '../controllers/ReflectionControllerJSON';
 import Reflection from '../controllers/ReflectionControllerDB';
 import User from '../controllers/UserControllerDB';
 import Auth from '../middleware/Auth';
@@ -10,6 +11,21 @@ router.get('/', (req, res) => res.status(200).json({
   status: 200,
   message: 'Welcome to Reflections API v1',
 }));
+
+/**
+ * API v1 Endpoints
+ */
+
+
+router.post('/reflections', ReflectionController.create);
+router.get('/reflections', ReflectionController.getAll);
+router.get('/reflections/:id', ReflectionController.getOne);
+router.patch('/reflections/:id', ReflectionController.update);
+router.delete('/reflections/:id', ReflectionController.delete);
+
+/**
+ * API v2 Endpoints
+ */
 
 // Handle POST requests
 router.post(
@@ -56,15 +72,5 @@ router.delete(
   Auth.verifyToken,
   User.deleteUser,
 );
-
-
-/**
- * Old route points
- */
-/* router.post('/reflections', Reflection.create);
-router.get('/reflections', Reflection.getAll);
-router.get('/reflections/:id', Reflection.getOne);
-router.patch('/reflections/:id', Reflection.update);
-router.delete('/reflections/:id', Reflection.delete); */
 
 export default router;

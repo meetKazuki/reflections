@@ -1,9 +1,14 @@
 language: node_js
 node_js: 10.15.1
-
+env:
+  global:
+    - CC_TEST_REPORTER_ID=4660976d61289bd273640a2541ce909e53354dc531cc5d818c52fdddf3bb1720
 cache:
   directories:
     - "node_modules"
+
+install:
+  - npm install
 
 before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
@@ -11,9 +16,10 @@ before_script:
   - ./cc-test-reporter before-build
 
 script:
-  - npm run coverage
+  - npm run test
   
 after_script:
+  - npm run coverage
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 
 notifications:
